@@ -10,26 +10,28 @@ These instructions are for development, and may differ slightly for delopyment.
 
 1) Install the [Keycloak distribution](https://www.keycloak.org/guides).
 
-2) Clone the repository into `keycloak-X.Y.Z/themes/`.
+2) Clone the repository's contents into `keycloak-X.Y.Z/themes/esnet`.
 
 ```sh
 cd keycloak-X.Y.Z/themes
-git clone https://github.com/echennau/esnet-keycloak-theme
+git clone https://github.com/echennau/esnet-keycloak-theme esnet
 ```
 
 3) Start the development server with the following command:
 
 ```sh
-cd ..  # cd into project directory
+cd ..
 bin/kc.sh start-dev \
     --spi-theme-static-max-age=-1 \
     --spi-theme-cache-themes=false \
     --spi-theme-cache-templates=false
 ```
 
-4) Enable the theme by logging in with `admin:admin`, and then Realm Settings > Themes > Login theme.
+4) Create initial administrator user.
 
-5) Log out to see the theme applied to the login page.
+5) Enable the theme by logging in as admin and going to Realm Settings > Themes > Login theme > esnet
+
+6) Log out to see the theme applied to the login page. Refresh the page after changes to apply effects.
 
 ## Development
 
