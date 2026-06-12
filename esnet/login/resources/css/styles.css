@@ -1,0 +1,260 @@
+/* map packets.css tokens onto PatternFly v5 global variables */
+:root {
+  --pf-v5-global--FontFamily--sans-serif: var(--pkts-font-family-body-sans);
+  --pf-v5-global--FontFamily--heading--sans-serif: var(--pkts-font-family-header-sans);
+  --pf-v5-global--primary-color--100: var(--pkts-color-core-blue-400);
+  --pf-v5-global--primary-color--200: var(--pkts-color-core-blue-400);
+  --pf-v5-global--link--Color: var(--pkts-color-core-blue-400);
+  --pf-v5-global--link--Color--hover: var(--pkts-color-core-blue-400);
+  --pf-v5-global--Color--100: var(--pkts-color-dark-copy);
+  --pf-v5-global--Color--200: var(--pkts-color-dark-copy-alt);
+  --pf-v5-global--BackgroundColor--100: var(--pkts-color-dark-background);
+  --pf-v5-global--BorderColor--100: var(--pkts-color-core-slate-900);
+}
+
+/* page background */
+.login-pf body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  background: url("../img/background.png") no-repeat center center fixed;
+  background-size: cover;
+  background-color: var(--pkts-color-core-black-900);
+}
+
+.login-pf body::after {
+  content: '';
+  display: block;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.pf-v5-c-login,
+.pf-v5-c-login__container {
+  display: contents;
+}
+
+/* login card */
+.pf-v5-c-login__main {
+  background-color: var(--pkts-color-dark-background) !important;
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  box-shadow: var(--pkts-box-shadow-core-medium);
+  border-radius: 0;
+  align-self: center;
+  margin-top: auto;
+
+  --pf-v5-c-login__main-header--PaddingTop: 0;
+  --pf-v5-c-login__main-header--PaddingRight: 0;
+  --pf-v5-c-login__main-header--PaddingBottom: 0;
+  --pf-v5-c-login__main-header--PaddingLeft: 0;
+  --pf-v5-c-login__main-header--md--PaddingRight: 0;
+  --pf-v5-c-login__main-header--md--PaddingLeft: 0;
+  --pf-v5-c-login__main-body--PaddingRight: 0;
+  --pf-v5-c-login__main-body--PaddingBottom: 0;
+  --pf-v5-c-login__main-body--PaddingLeft: 0;
+  --pf-v5-c-login__main-body--md--PaddingRight: 0;
+  --pf-v5-c-login__main-body--md--PaddingLeft: 0;
+  --pf-v5-c-login__main-footer--PaddingBottom: 0;
+  --pf-v5-c-login__main--MarginBottom: auto;
+}
+
+/* esnet logo inside the card */
+.esnet-logo {
+  max-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* center the title */
+.pf-v5-c-login__main-header {
+  display: flex;
+  justify-content: center;
+}
+
+/* page title */
+#kc-page-title {
+  font: var(--pkts-typography-header-4-sans-font);
+  color: var(--pkts-color-dark-copy);
+  margin: 0;
+}
+
+/* form labels */
+.pf-v5-c-form__label,
+.pf-v5-c-form__label-text {
+  font: var(--pkts-typography-label-1-large-font);
+  color: var(--pkts-color-dark-copy);
+}
+
+/* suppress PF's border accent pseudo-elements on the form-control wrapper */
+.pf-v5-c-form-control::before,
+.pf-v5-c-form-control::after {
+  display: none;
+}
+
+/* inputs fill their wrapper and defer focus ring to the wrapper */
+.pf-v5-c-form-control>input,
+.pf-v5-c-form-control>textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+}
+
+/* readonly inputs — suppress hover/focus styling */
+.pf-v5-c-form-control.pf-m-readonly {
+  cursor: default;
+}
+
+/* prevent PF from showing focus ring / hover outline on readonly wrappers */
+.pf-v5-c-form-control.pf-m-readonly:hover,
+.pf-v5-c-form-control.pf-m-readonly:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: revert !important;
+}
+
+.pf-v5-c-check {
+  display: flex;
+  align-items: center;
+}
+
+/* checkbox label */
+.pf-v5-c-check__label {
+  font: var(--pkts-typography-label-1-sans-font);
+  font-size: 13px;
+  color: var(--pkts-color-dark-copy-alt);
+}
+
+/* helper/muted text */
+.pf-v5-c-helper-text__item-text,
+.pf-v5-c-form__helper-text {
+  color: var(--pkts-color-dark-copy-alt);
+}
+
+/* error text */
+.pf-v5-c-helper-text__item-text.pf-m-error,
+.kc-feedback-text {
+  color: var(--pkts-color-dark-error);
+}
+
+/* alert box */
+.pf-v5-c-alert {
+  background-color: transparent;
+}
+
+/* links — packets.css sets a { color: dark-secondary } which resolves to white on dark
+   backgrounds; override with a more specific selector so it wins regardless of load order */
+.pf-v5-c-login__main a,
+.pf-v5-c-login__main a:visited {
+  color: var(--pkts-color-core-blue-400);
+}
+
+/* info text at bottom of card */
+.kc-esnet-info-text {
+  font: var(--pkts-typography-label-1-sans-font);
+  color: var(--pkts-color-dark-copy-alt-2, #c2c2c2);
+  text-align: center;
+  margin: 0;
+}
+
+/* doe logo - fixed to bottom-left of viewport */
+.doe-logo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 227px;
+  height: auto;
+  z-index: -1;
+}
+
+/* password field: eye toggle absolutely positioned inside the input */
+.pf-v5-c-input-group {
+  position: relative;
+}
+
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(.pf-m-fill) {
+  position: absolute;
+  right: 0;
+  inset-block: 0;
+  display: flex;
+  align-items: center;
+  border-inline-start: none;
+}
+
+.pf-v5-c-input-group .pf-v5-c-button.pf-m-control {
+  color: var(--pkts-color-dark-copy-alt);
+  background-color: transparent;
+  border-color: transparent;
+  padding-inline: var(--pkts-size-spacing-small, 0.75rem);
+  transition: color var(--pkts-time-duration-quick, 250ms) ease;
+
+  &:hover {
+    color: var(--pkts-color-dark-copy);
+  }
+
+  &::after {
+    border: none;
+  }
+}
+
+/* align remember me checkbox and forgot password link */
+.pf-v5-c-form__helper-text .pf-v5-c-helper-text {
+  align-items: center;
+}
+
+/* gap between password row and remember me / forgot password row */
+.pf-v5-c-input-group+.pf-v5-c-form__helper-text {
+  margin-top: 8px;
+}
+
+@media (min-width: 1440px) {
+  .pf-v5-c-login__main {
+    max-width: 450px;
+    padding: 48px;
+    gap: 12px;
+  }
+
+  .esnet-logo {
+    max-width: 315px;
+  }
+
+  #kc-page-title {
+    font: var(--pkts-typography-header-3-sans-font);
+  }
+
+  .doe-logo {
+    width: 255px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .pf-v5-c-login__main {
+    max-width: 600px;
+    padding: 64px;
+    gap: 16px;
+  }
+
+  .esnet-logo {
+    max-width: 420px;
+  }
+
+  #kc-page-title {
+    font: var(--pkts-typography-header-2-sans-font);
+  }
+
+  .doe-logo {
+    width: 340px;
+  }
+
+  .kc-esnet-info-text {
+    font: var(--pkts-typography-label-1-large-font);
+  }
+}
