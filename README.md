@@ -13,7 +13,7 @@ These instructions are for development, and may differ slightly for delopyment.
 2) Clone the repository's contents into `keycloak-X.Y.Z/themes/esnet`.
 
 ```sh
-cd keycloak-X.Y.Z/themes
+cd themes
 git clone https://github.com/echennau/esnet-keycloak-theme esnet
 ```
 
